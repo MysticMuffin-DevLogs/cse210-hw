@@ -1,0 +1,12 @@
+Your response must:
+
+Explain the meaning of Version Control
+- 
+Highlight a benefit of Version Control
+-
+
+Example of version control: Describe the way version control might be used on a software development team.
+-
+Show a command used in Version Control (for example a Git command)
+-
+Thoroughly explain these concepts (this likely cannot be done in less than 100 words)
