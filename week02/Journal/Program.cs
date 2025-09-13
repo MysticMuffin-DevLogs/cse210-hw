@@ -20,7 +20,8 @@ class Program
             switch (userInput)
             {
                 case "1":
-                    Console.WriteLine("You selected 1");
+                    PromptGenerator generator = new PromptGenerator();
+                    generator.PromptUser();
                     break;
                 case "2":
                     Console.WriteLine("You selected 2");
