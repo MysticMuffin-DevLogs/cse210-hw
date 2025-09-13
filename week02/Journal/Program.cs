@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Journal myJournal = new Journal();
         bool keepRunningProject = true;
 
         while (keepRunningProject)
@@ -21,16 +22,39 @@ class Program
             {
                 case "1":
                     PromptGenerator generator = new PromptGenerator();
-                    generator.PromptUser();
+                    //I am storing the prompt in a value
+                    string prompt = generator.PromptUser();
+                    //this displays the prompt to the user
+                    Console.WriteLine(prompt);
+                    //I am now sroring the response so i can later create the entry
+                    string userResponse = Console.ReadLine();
+
+                    Entry newEntry = new Entry();
+                    newEntry._todaysDate = DateTime.Now.ToShortDateString();
+                    newEntry._prompt = prompt;
+                    newEntry._response = userResponse;
+
+
+                    myJournal.AddEntry(newEntry);
                     break;
                 case "2":
-                    Console.WriteLine("You selected 2");
+                    myJournal.DisplayAll();
                     break;
                 case "3":
-                    Console.WriteLine("You selected 3");
+                    Console.WriteLine("Enter a file name dont forget to include .txt");
+                    string fileName = Console.ReadLine();
+                    myJournal.SaveEntry(fileName);
                     break;
                 case "4":
-                    Console.WriteLine("You selected 4");
+                    Console.Write("Enter the filename to load: ");
+                    string loadFileName = Console.ReadLine();
+                    if (!loadFileName.EndsWith(".txt", StringComparison.OrdinalIgnoreCase))
+                    {
+                        loadFileName += ".txt";
+                    }
+
+                    myJournal.LoadFromFile(loadFileName);
+                    Console.WriteLine("Journal loaded.");
                     break;
                 case "5":
                     keepRunningProject = false;

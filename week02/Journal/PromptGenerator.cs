@@ -23,11 +23,14 @@ public class PromptGenerator
     "If I could send a message to my future self, what would it say about today?",
   };
 
-  public void PromptUser()
+  public string PromptUser()
   {
     Random rnd = new Random();
     int index = rnd.Next(prompts.Length);
-    Console.WriteLine(prompts[index]);
+
+    string prompt = prompts[index];
+
+    return prompt;
   }
 
 }
