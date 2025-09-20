@@ -42,7 +42,7 @@ class Program
                     break;
                 case "3":
                     Console.WriteLine("Enter a file name dont forget to include .txt");
-                    string fileName = Console.ReadLine();
+                    string fileName = Console. ReadLine();
                     myJournal.SaveEntry(fileName);
                     break;
                 case "4":
